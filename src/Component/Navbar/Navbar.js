@@ -11,11 +11,13 @@ const Header = () => {
         <div>
             <Navbar>
                 <Container>
-                    <Navbar.Brand to='/home'>Gadget ZOne</Navbar.Brand>
+                    <Navbar.Brand href='/'>Gadget ZOne</Navbar.Brand>
                     <Navbar.Toggle />
                     <Nav className="me-auto">
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/home'>Home</Link>
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/about'>About</Link>
+                        <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/products'>Products</Link>
+                        <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/uploadproduct'>UploadProduct</Link>
                         
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
