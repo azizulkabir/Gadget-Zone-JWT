@@ -18,6 +18,7 @@ const Header = () => {
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/about'>About</Link>
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/products'>Products</Link>
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/uploadproduct'>UploadProduct</Link>
+                        <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/login'>Login</Link>
                         
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
