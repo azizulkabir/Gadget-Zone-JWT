@@ -5,23 +5,12 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
 
     const handleGoogleSignIn=(event)=>{
         event.preventDefault();
         signInWithGoogle()
-        console.log('clicked')
-        if(loading){
-            return(
-                <div><p>Loading.....</p></div>
-            )
-        }
-        if(user){
-           console.log(user);
-        }
-        if(error){
-            console.log(error);
-        }
+       
     }
     return (
         <div>

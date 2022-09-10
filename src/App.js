@@ -5,6 +5,7 @@ import About from './Component/About/About';
 import Home from './Component/Home/Home';
 import Login from './Component/Login/Login';
 import Navbar from './Component/Navbar/Navbar';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Products from './Component/Product/Products';
 import UploadProducts from './Component/UploadProducts/UploadProducts';
 
@@ -17,8 +18,8 @@ function App() {
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/home' element={<Home></Home>}></Route>
       <Route path='/about' element={<About></About>}></Route>
-      <Route path='/products' element={<Products></Products>}></Route>
-      <Route path='/uploadproduct' element={<UploadProducts></UploadProducts>}></Route>
+      <Route path='/products' element={<PrivateRoute><Products></Products></PrivateRoute>}></Route>
+      <Route path='/uploadproduct' element={<PrivateRoute><UploadProducts></UploadProducts></PrivateRoute>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
      </Routes>
     </div>
