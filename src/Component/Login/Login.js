@@ -1,9 +1,28 @@
 
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    const handleGoogleSignIn=(event)=>{
+        event.preventDefault();
+        signInWithGoogle()
+        console.log('clicked')
+        if(loading){
+            return(
+                <div><p>Loading.....</p></div>
+            )
+        }
+        if(user){
+           console.log(user);
+        }
+        if(error){
+            console.log(error);
+        }
+    }
     return (
         <div>
             <div >
@@ -33,7 +52,7 @@ const Login = () => {
                 <div style={{ height: '1px' }} className='bg-primary w-50'></div>
             </div>
             <div className='text-center'>
-                <button className='btn btn-success'> Google SignIn </button>
+                <button className='btn btn-success' onClick={handleGoogleSignIn}> Google SignIn </button>
             </div>
         </div>
     );
