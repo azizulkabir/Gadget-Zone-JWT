@@ -1,16 +1,27 @@
 
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Login = () => {
     const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [user] = useAuthState(auth);
+    
+    
+    let navigate = useNavigate();
+    let location = useLocation();
+   
+    let from = location.state?.from?.pathname || "/";
+    console.log(from);
 
-    const handleGoogleSignIn=(event)=>{
-        event.preventDefault();
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-       
+        
+    }
+    if (user) {
+        navigate(from, { replace: true });
     }
     return (
         <div>
