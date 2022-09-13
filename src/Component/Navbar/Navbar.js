@@ -15,6 +15,7 @@ const Header = () => {
     const handleSignOut=(event)=>{
         event.preventDefault();
         signOut(auth);
+        console.log(user.photoURL);
     }
     return (
         <div>
@@ -35,12 +36,14 @@ const Header = () => {
                            {
                             user ? 
                             <div>
-                                <span>{user.displayName}</span> <span ><img className='rounded-circle' src={user.photoURL} alt="" /></span> <span onClick={handleSignOut} className='btn btn-success'>LogOut</span>
+                                <span>{user.displayName}</span> <span ><img className='rounded-circle' src={user.photoURL}  alt="" />
+                                </span> <span onClick={handleSignOut} className='btn btn-success'>LogOut</span>
                             </div>
                               :
                             <div>
                                 <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/login'>Login</Link>
                             </div>
+                            
                            }
                         </Navbar.Text>
                     </Navbar.Collapse>
