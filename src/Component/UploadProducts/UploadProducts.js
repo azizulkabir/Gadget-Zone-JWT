@@ -23,7 +23,7 @@ const UploadProducts = () => {
                         <Form.Control type="text" name='price' placeholder="Enter product price" />
                     </Form.Group>
                     <Button variant="success" type="submit">
-                        Submit
+                        Upload
                     </Button>
                 </Form>
             </div>
