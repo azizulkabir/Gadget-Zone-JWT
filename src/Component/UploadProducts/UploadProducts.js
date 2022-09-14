@@ -8,20 +8,22 @@ const UploadProducts = () => {
         const productPrice = event.target.price.value;
         //uploadproduct
 
-        const url = `http://localhost:5000/uploadproduct`;
+        const url = 'http://localhost:5000/upload';
 
         fetch(url, {
             method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
             body: JSON.stringify({
                 productName, productPrice
             }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
-
+            .then(result =>{
+                console.log(result);
+            });
+           
     }
     return (
         <div>
