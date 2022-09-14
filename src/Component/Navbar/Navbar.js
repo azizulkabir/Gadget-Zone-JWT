@@ -21,7 +21,7 @@ const Header = () => {
         <div>
             <Navbar>
                 <Container>
-                    <Navbar.Brand href='/'>Gadget ZOne</Navbar.Brand>
+                    <Navbar.Brand href='/'>Gadget Zone</Navbar.Brand>
                     <Navbar.Toggle />
                     <Nav className="me-auto">
                         <Link style={{textDecoration: 'none'}} className='mx-1 text-success ' to='/home'>Home</Link>

@@ -2,11 +2,26 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 const UploadProducts = () => {
-    const handleSubmit=(event)=>{
+    const handleSubmit = (event) => {
         event.preventDefault();
         const productName = event.target.name.value;
         const productPrice = event.target.price.value;
-        console.log(productName, productPrice);
+        //uploadproduct
+
+        const url = `http://localhost:5000/uploadproduct`;
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                productName, productPrice
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
     }
     return (
         <div>
